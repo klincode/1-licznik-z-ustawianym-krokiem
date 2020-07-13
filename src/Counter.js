@@ -13,52 +13,27 @@ const Counter = (props) => {
   const [counterValue, setCounterValue] = useState(props.initValue);
   const [stepValue, setStepValue] = useState(props.initStepValue);
 
-
   const handleStep = (value) => {
     setStepValue(Number(value));
-    // this.setState({ step: Number(value) })
   }
 
   const changeValue = (action) => {
     let currentCounterValue = counterValue;
     if (action === 'add') {
-      currentCounterValue += prevState.step;
+      currentCounterValue += 1;
     } else if (action === 'reinit') {
-      currentCounterValue = prevProps.initValue;
+      currentCounterValue = props.initValue;
     }
     else if (action === 'step') {
-      currentCounterValue += prevState.step
+      currentCounterValue += stepValue
     }
     else {
       currentCounterValue = 0;
     }
-    return (
-      { counterValue: currentCounterValue }
-    )
 
-
-    // this.setState((prevState, prevProps) => {
-    //   let currentCounterValue = prevState.counterValue;
-
-    //   if (action === 'add') {
-    //     currentCounterValue += prevState.step;
-    //   } else if (action === 'reinit') {
-    //     currentCounterValue = prevProps.initValue;
-    //   }
-    //   else if (action === 'step') {
-    //     currentCounterValue += prevState.step
-    //   }
-    //   else {
-    //     currentCounterValue = 0;
-    //   }
-    //   return (
-    //     { counterValue: currentCounterValue }
-    //   )
-    // })
-
+    setCounterValue(currentCounterValue)
   }
 
-  // let randomNumber = Math.floor(Math.random() * (108) + 1);
   return (
     <div className="counter">
       Licznik :
