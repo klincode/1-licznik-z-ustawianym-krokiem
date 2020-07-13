@@ -16,7 +16,7 @@ class Step extends React.Component {
     return (
       <div className="step">
         <span>Krok: </span>
-        <input ref={(data) => { this._inputStep = data }} type="number" name="number" min="0" defaultValue={this.props.step} onChange={() => this.props.stepMethod(this._inputStep.value)} />
+        <input ref={(data) => { this._inputStep = data }} type="number" name="number" min="1" defaultValue={this.props.step} onChange={() => this.props.stepMethod(this._inputStep.value)} />
 
       </div>
     )
