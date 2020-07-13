@@ -21,7 +21,7 @@ class Counter extends React.Component {
       let currentCounterValue = prevState.counterValue;
 
       if (action === 'add') {
-        currentCounterValue += prevState.step;
+        currentCounterValue += 1;
       } else if (action === 'reinit') {
         currentCounterValue = prevProps.initValue;
       }
