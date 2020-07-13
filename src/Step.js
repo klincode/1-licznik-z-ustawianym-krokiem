@@ -3,7 +3,7 @@ import './Step.css'
 class Step extends React.Component {
   constructor(props) {
     super(props);
-    this.inputNumberRef = React.createRef();
+    // this.inputNumberRef = React.createRef();
   }
 
   // handleStep = () => {
