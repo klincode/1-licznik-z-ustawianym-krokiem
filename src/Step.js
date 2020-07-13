@@ -6,11 +6,7 @@ class Step extends React.Component {
     // this.inputNumberRef = React.createRef();
   }
 
-  // handleStep = () => {
-  //   // console.log();
-  //   let step = this._inputStep.value
-  //   console.log(step);
-  // }
+
   render() {
 
     return (
