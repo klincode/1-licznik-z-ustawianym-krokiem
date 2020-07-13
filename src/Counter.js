@@ -20,25 +20,41 @@ const Counter = (props) => {
   }
 
   const changeValue = (action) => {
+    let currentCounterValue = counterValue;
+    if (action === 'add') {
+      currentCounterValue += prevState.step;
+    } else if (action === 'reinit') {
+      currentCounterValue = prevProps.initValue;
+    }
+    else if (action === 'step') {
+      currentCounterValue += prevState.step
+    }
+    else {
+      currentCounterValue = 0;
+    }
+    return (
+      { counterValue: currentCounterValue }
+    )
 
-    this.setState((prevState, prevProps) => {
-      let currentCounterValue = prevState.counterValue;
 
-      if (action === 'add') {
-        currentCounterValue += prevState.step;
-      } else if (action === 'reinit') {
-        currentCounterValue = prevProps.initValue;
-      }
-      else if (action === 'step') {
-        currentCounterValue += prevState.step
-      }
-      else {
-        currentCounterValue = 0;
-      }
-      return (
-        { counterValue: currentCounterValue }
-      )
-    })
+    // this.setState((prevState, prevProps) => {
+    //   let currentCounterValue = prevState.counterValue;
+
+    //   if (action === 'add') {
+    //     currentCounterValue += prevState.step;
+    //   } else if (action === 'reinit') {
+    //     currentCounterValue = prevProps.initValue;
+    //   }
+    //   else if (action === 'step') {
+    //     currentCounterValue += prevState.step
+    //   }
+    //   else {
+    //     currentCounterValue = 0;
+    //   }
+    //   return (
+    //     { counterValue: currentCounterValue }
+    //   )
+    // })
 
   }
 
