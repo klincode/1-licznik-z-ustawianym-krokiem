@@ -1,5 +1,3 @@
-import React, { useReducer } from 'react'
-
 const initialState = {
   result: 10,
   step: 5
